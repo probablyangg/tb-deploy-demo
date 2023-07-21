@@ -1,0 +1,26 @@
+{
+  "name": "tb-deploy-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anggxyz/tb-deploy-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anggxyz/tb-deploy-demo/issues"
+  },
+  "homepage": "https://github.com/anggxyz/tb-deploy-demo#readme",
+  "dependencies": {
+    "@tokenbound/sdk": "^0.3.1",
+    "ethers": "^6.6.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  }
+}
