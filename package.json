@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/anggxyz/tb-deploy-demo#readme",
   "dependencies": {
-    "@tokenbound/sdk": "^0.3.1",
+    "@tokenbound/sdk": "^0.3.2",
     "ethers": "^6.6.4",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
