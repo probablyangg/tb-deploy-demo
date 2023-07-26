@@ -1,3 +1,6 @@
 [submodule "demo-nft/lib/forge-std"]
 	path = demo-nft/lib/forge-std
 	url = https://github.com/foundry-rs/forge-std
+[submodule "demo-nft/lib/solmate"]
+	path = demo-nft/lib/solmate
+	url = https://github.com/transmissions11/solmate
