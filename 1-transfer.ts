@@ -34,7 +34,7 @@ const displayBalance = async (address: string) => {
   const TBA = tokenBoundAccount;
 
   const amount = parseEther("1");
-  console.log(`sending ${amount} ETH from ${wallet.address} to ${TBA}`);
+  console.log(`sending ${formatEther(amount)} ETH from ${wallet.address} to ${TBA}`);
 
 
   await wallet.sendTransaction({
