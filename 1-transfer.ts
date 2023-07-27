@@ -1,20 +1,5 @@
-import { JsonRpcProvider, Wallet, formatEther, parseEther } from "ethers";
-import { CONSTANTS } from "./constants"
-const { CHAIN_ID, NFT_CONTRACT, NFT_ID, RPC } = CONSTANTS;
-import {TokenboundClient, TokenboundClientOptions} from "@tokenbound/sdk";
-import { TBAccountParams } from "@tokenbound/sdk/dist/src/TokenboundClient";
-
-const provider = new JsonRpcProvider(RPC);
-if (!process.env.TEST_ACCOUNT) {
-  console.error ("TEST_ACCOUNT private key undefined in .env");
-  process.exit();
-}
-
-const wallet = new Wallet(process.env.TEST_ACCOUNT, provider);
-const tokenboundClient = new TokenboundClient({
-  signer: wallet,
-  chainId: CHAIN_ID
-});
+import { formatEther, parseEther } from "ethers";
+import { wallet, provider, tokenBoundAccount } from "./client";
 
 const displayBalance = async (address: string) => {
   const balance = await provider.getBalance(address);
@@ -26,21 +11,13 @@ const displayBalance = async (address: string) => {
   console.log(`sender:`, wallet.address);
   await displayBalance(wallet.address);
 
-  const tokenBoundAccount = tokenboundClient.getAccount({
-    tokenContract: NFT_CONTRACT as TBAccountParams["tokenContract"],
-    tokenId: NFT_ID,
-    });
-
-  const TBA = tokenBoundAccount;
-
   const amount = parseEther("1");
-  console.log(`sending ${formatEther(amount)} ETH from ${wallet.address} to ${TBA}`);
-
+  console.log(`sending ${formatEther(amount)} ETH from ${wallet.address} to ${tokenBoundAccount}`);
 
   await wallet.sendTransaction({
-    to: TBA,
+    to: tokenBoundAccount,
     value: amount
   })
   await displayBalance(wallet.address);
-  await displayBalance(TBA);
+  await displayBalance(tokenBoundAccount);
 })()
