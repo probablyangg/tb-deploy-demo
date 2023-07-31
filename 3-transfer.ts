@@ -1,11 +1,7 @@
 import { formatEther, parseEther } from "ethers";
 import { TBAccountParams } from "@tokenbound/sdk/dist/src/TokenboundClient";
-import client, {wallet, provider, tokenBoundAccount} from "./client";
+import client, {wallet, provider, tokenBoundAccount, displayBalance} from "./client";
 
-const displayBalance = async (address: string) => {
-  const balance = await provider.getBalance(address);
-  console.log(`balance of ${address}: ${formatEther(balance)}`)
-}
 
 // transfer eth from B -> A
 (async () => {

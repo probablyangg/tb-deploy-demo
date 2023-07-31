@@ -15,8 +15,3 @@ import client, {tokenBoundAccount} from "./client";
 
   console.log(account);
 })()
-
-
-
-
-

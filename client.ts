@@ -1,5 +1,5 @@
 import { TokenboundClient } from "@tokenbound/sdk";
-import { JsonRpcProvider, Wallet } from "ethers";
+import { JsonRpcProvider, Wallet, formatEther } from "ethers";
 import { CONSTANTS } from "./constants"
 import { TBAccountParams } from "@tokenbound/sdk/dist/src/TokenboundClient";
 
@@ -26,5 +26,10 @@ export const tokenBoundAccount = tokenboundClient.getAccount({
   tokenContract: NFT_CONTRACT as TBAccountParams["tokenContract"],
   tokenId: NFT_ID,
 });
+
+export const displayBalance = async (address: string) => {
+  const balance = await provider.getBalance(address);
+  console.log(`balance of ${address}: ${formatEther(balance)}`)
+}
 
 export default tokenboundClient;

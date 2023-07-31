@@ -1,10 +1,5 @@
 import { formatEther, parseEther } from "ethers";
-import { wallet, provider, tokenBoundAccount } from "./client";
-
-const displayBalance = async (address: string) => {
-  const balance = await provider.getBalance(address);
-  console.log(`balance of ${address}: ${formatEther(balance)}`)
-}
+import { wallet, provider, tokenBoundAccount, displayBalance } from "./client";
 
 // transfer eth from A -> B
 (async () => {
