@@ -10,3 +10,6 @@
 [submodule "contracts/erc6551-reference"]
 	path = contracts/erc6551-reference
 	url = https://github.com/erc6551/reference
+[submodule "contracts/test-nft/lib/forge-std"]
+	path = contracts/test-nft/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
